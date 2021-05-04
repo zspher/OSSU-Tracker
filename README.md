@@ -1,1 +1,1 @@
-# programming-jourbey
+# programming-journey
