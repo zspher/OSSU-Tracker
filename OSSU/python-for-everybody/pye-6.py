@@ -1,6 +1,6 @@
 # Exercise 5: Take the following Python code that stores a string:
 
-text = "X-DSPAM-Confidence:    0.8475";
+text = "X-DSPAM-Confidence:    0.8475"
 start = text.find(":")
 end = text.find("5", start)
 str = float(text[start+1:end+1])
@@ -15,5 +15,5 @@ print(str)
 
 # The documentation uses a syntax that might be confusing. For example, in find(sub[, start[, end]]), the brackets indicate optional arguments. So sub is required, but start is optional, and if you include start, then end is optional.
 
-x = 'From marquard@uct.ac.za'
-print(x[9])
+# x = 'From marquard@uct.ac.za'
+# print(x[9])
