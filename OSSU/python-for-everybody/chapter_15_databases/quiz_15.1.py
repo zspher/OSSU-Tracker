@@ -1,3 +1,4 @@
+# Single Table SQL
 # Then, create a SQLITE database or use an existing database and create a table in the database called "Ages":
 
 # CREATE TABLE Ages ( 
