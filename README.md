@@ -13,15 +13,15 @@ This repo contains my current progress in the [Open Source Society University Co
 
 ### Introduction to Programming
 
-| Provider |                        Course                        | Completion Date | Proof | Repository |
-| :------: | :--------------------------------------------------: | :-------------: | :---: | :--------: |
-| py4e.com | [Python for Everybody](https://www.py4e.com/lessons) |        -        |   -   |     -      |
+| Provider |                        Course                        | Completion Date | Proof |                Repository                |
+| :------: | :--------------------------------------------------: | :-------------: | :---: | :--------------------------------------: |
+| py4e.com | [Python for Everybody](https://www.py4e.com/lessons) |        -        |   -   | [code](Courses/Python%20for%20Everybody) |
 
 ### Introduction to Computer Science
 
 | Provider |                                                                     Course                                                                     | Completion Date | Proof | Repository |
 | :------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------: | :---: | :--------: |
-|   MITx   | [Introduction to Computer Science and Programming using Python](https://www.edx.org/course/introduction-to-computer-science-and-programming-7) |        -        |   -   |     [code](Courses/Python%20for%20Everybody)      |
+|   MITx   | [Introduction to Computer Science and Programming using Python](https://www.edx.org/course/introduction-to-computer-science-and-programming-7) |        -        |   -   |     -      |
 
 ## Core CS
 
