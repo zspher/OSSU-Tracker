@@ -21,7 +21,7 @@ This repo contains my current progress in the [Open Source Society University Co
 
 | Provider |                                                                     Course                                                                     | Completion Date | Proof | Repository |
 | :------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------: | :---: | :--------: |
-|   MITx   | [Introduction to Computer Science and Programming using Python](https://www.edx.org/course/introduction-to-computer-science-and-programming-7) |        -        |   -   |     -      |
+|   MITx   | [Introduction to Computer Science and Programming using Python](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/7) |        -        |   -   |     -      |
 
 ## Core CS
 
