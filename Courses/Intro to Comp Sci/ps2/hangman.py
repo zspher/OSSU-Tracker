@@ -154,6 +154,11 @@ def hangman(secret_word):
             print(f"Your total score for this game is: {guesses_remaining*len(set(secret_word))}")
             break
 
+        if guesses_remaining <= 0:
+            print(f"Sorry, you ran out of guesses. The word was {secret_word}")
+            break
+
+
         print(f"You have {guesses_remaining} guesses left.")
         print(f"Available letters: {get_available_letters(letters_guessed)}")
 
