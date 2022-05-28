@@ -100,7 +100,7 @@ def get_word_score(word, n):
     for c in word:
         c_1 += SCRABBLE_LETTER_VALUES[c]
     
-    c_2 = 7 * word_len - 3 * (n - word_len)
+    c_2 = HAND_SIZE * word_len - 3 * (n - word_len)
     if c_2 < 1:
         c_2 = 1
     
