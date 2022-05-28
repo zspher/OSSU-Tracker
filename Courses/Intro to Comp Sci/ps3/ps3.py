@@ -103,7 +103,7 @@ def get_word_score(word, n):
     c_2 = HAND_SIZE * word_len - 3 * (n - word_len)
     if c_2 < 1:
         c_2 = 1
-    
+
     return c_1 * c_2
 
 
@@ -210,8 +210,17 @@ def is_valid_word(word, hand, word_list):
     word_list: list of lowercase strings
     returns: boolean
     """
+    word = word.lower()
+    if word not in word_list:
+        return False
+    
+    word = get_frequency_dict(word)
 
-    pass  # TO DO... Remove this line when you implement this function
+    for l in word:
+        if not hand.get(l, 0) >= word.get(l, 0):
+            return False
+    return True
+
 
 #
 # Problem #5: Playing a hand
