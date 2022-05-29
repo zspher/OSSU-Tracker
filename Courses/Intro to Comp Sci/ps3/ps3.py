@@ -8,6 +8,7 @@
 # Time spent    : <total time>
 
 import math
+from pickle import TRUE
 import random
 import string
 
@@ -16,7 +17,7 @@ CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
 HAND_SIZE = 7
 
 SCRABBLE_LETTER_VALUES = {
-    'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
+    'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10, '*': 0
 }
 
 # -----------------------------------
@@ -153,9 +154,11 @@ def deal_hand(n):
     hand = {}
     num_vowels = int(math.ceil(n / 3))
 
-    for i in range(num_vowels):
+    for i in range(num_vowels-1):
         x = random.choice(VOWELS)
         hand[x] = hand.get(x, 0) + 1
+
+    hand["*"] = hand.get("*" , 0) + 1
 
     for i in range(num_vowels, n):
         x = random.choice(CONSONANTS)
@@ -211,14 +214,24 @@ def is_valid_word(word, hand, word_list):
     returns: boolean
     """
     word = word.lower()
+    hand_copy = hand.copy()
+    if '*' in word:
+        word_copy = word
+        for v in VOWELS:
+            word_copy = word.replace('*', v)
+            if word_copy in word_list:
+                word = word_copy
+                hand_copy[v] = hand_copy.get(v , 0) + 1
+                break
+
     if word not in word_list:
         return False
     
-    word = get_frequency_dict(word)
-
-    for l in word:
-        if not hand.get(l, 0) >= word.get(l, 0):
+    word_dict = get_frequency_dict(word)
+    for l in word_dict:
+        if not hand_copy.get(l, 0) >= word_dict.get(l, 0):
             return False
+    
     return True
 
 
@@ -377,3 +390,5 @@ def play_game(word_list):
 if __name__ == '__main__':
     word_list = load_words()
     play_game(word_list)
+    print(deal_hand(7))
+
