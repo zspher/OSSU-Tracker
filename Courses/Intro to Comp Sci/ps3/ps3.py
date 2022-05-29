@@ -193,7 +193,7 @@ def update_hand(hand, word):
     hand_copy = hand.copy()
     for c in word.lower():
         hand_copy[c] = hand_copy.get(c, 0) - 1
-        if hand_copy[c] == 0:
+        if hand_copy[c] <= 0:
             del hand_copy[c]
     return hand_copy
 
