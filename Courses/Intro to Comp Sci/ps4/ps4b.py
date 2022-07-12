@@ -231,19 +231,18 @@ class CiphertextMessage(Message):
         '''
         degree_of_error = 0.99
 
-        output = None
-        while(output == None):
-            for i in range(26):
-                message = self.apply_shift(26 - i)
-                word_list = message.split()
-                verified = 0
-                for w in word_list:
-                    if is_word(self.valid_words, w):
-                        verified += 1
-                if verified >= len(word_list)*degree_of_error:
-                    output = (26 - i, message)
-            degree_of_error -= 0.1
-        return output 
+        max_verified = (0, 0, '')
+        for i in range(26):
+            message = self.apply_shift(26 - i)
+            word_list = message.split()
+            verified = 0
+            for w in word_list:
+                if is_word(self.get_valid_words(), w):
+                    verified += 1
+            if max_verified[0] <= verified:
+                max_verified = (verified, i, message)
+            
+        return (26 - max_verified[1], max_verified[2])
 
 
 
