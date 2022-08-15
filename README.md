@@ -13,15 +13,15 @@ This repo contains my current progress in the [Open Source Society University Co
 
 ### Introduction to Programming
 
-| Provider |                        Course                        | Completion Date | Proof |                Repository                |
-| :------: | :--------------------------------------------------: | :-------------: | :---: | :--------------------------------------: |
-| py4e.com | [Python for Everybody](https://www.py4e.com/lessons) |        -        |   -   | [code](Courses/Python%20for%20Everybody) |
+| Provider |                        Course                        | Completion Date |          Proof          |              Repository               |
+| :------: | :--------------------------------------------------: | :-------------: | :---------------------: | :-----------------------------------: |
+| py4e.com | [Python for Everybody](https://www.py4e.com/lessons) |    7/13/2021    | [*](Proof/PyE%20badges) | [*](Courses/Python%20for%20Everybody) |
 
 ### Introduction to Computer Science
 
-| Provider |                                                                     Course                                                                     | Completion Date | Proof | Repository |
-| :------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------: | :---: | :--------: |
-|   MITx   | [Introduction to Computer Science and Programming using Python](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/7) |        -        |   -   |     -      |
+| Provider |                                                                                                         Course                                                                                                         | Completion Date |  Proof   |              Repository               |
+| :------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------: | :------: | :-----------------------------------: |
+|   MITx   | [Introduction to Computer Science and Programming using Python](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/7) |    15/8/2022    | see repo | [*](/Courses/Intro%20to%20Comp%20Sci) |
 
 ## Core CS
 
