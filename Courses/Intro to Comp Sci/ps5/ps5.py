@@ -96,7 +96,6 @@ class Trigger(object):
 # PHRASE TRIGGERS
 
 # Problem 2
-# TODO: PhraseTrigger
 class PhraseTrigger(Trigger):
     def __init__(self, phrase) -> None:
         self.phrase = phrase.lower()
@@ -191,10 +190,13 @@ def filter_stories(stories, triggerlist):
 
     Returns: a list of only the stories for which a trigger in triggerlist fires.
     """
-    # TODO: Problem 10
-    # This is a placeholder
-    # (we're just returning all the stories, with no filtering)
-    return stories
+
+    triggered = []
+    for story in stories:
+        for trigger in triggerlist:
+            if story not in triggered and trigger.evaluate(story):
+                triggered.append(story)
+    return triggered
 
 
 
@@ -217,12 +219,30 @@ def read_trigger_config(filename):
         line = line.rstrip()
         if not (len(line) == 0 or line.startswith('//')):
             lines.append(line)
-
-    # TODO: Problem 11
-    # line is the list of lines that you need to parse and for which you need
-    # to build triggers
-
-    print(lines) # for now, print it so you see what it contains!
+    triggers = {}
+    triggerlist = []
+    for tr in lines:
+        t = tr.split(',')
+        if t[0][0] == 't':
+            match t[1]:
+                case 'TITLE':
+                    triggers[t[0]] = TitleTrigger(t[2])
+                case 'DESCRIPTION':
+                    triggers[t[0]] = DescriptionTrigger(t[2])
+                case 'AFTER':
+                    triggers[t[0]] = AfterTrigger(t[2])
+                case 'BEFORE':
+                    triggers[t[0]] = BeforeTrigger(t[2])
+                case 'NOT':
+                    triggers[t[0]] = NotTrigger(triggers[t[2]])
+                case 'AND':
+                    triggers[t[0]] = AndTrigger(triggers[t[2]], triggers[t[3]])
+                case 'OR':
+                    triggers[t[0]] = OrTrigger(triggers[t[2]], triggers[t[3]])
+        if t[0] == 'ADD':
+            for i in range(1, len(t)):
+                triggerlist.append(triggers[t[i]])
+    return triggerlist
 
 
 
@@ -239,8 +259,7 @@ def main_thread(master):
         triggerlist = [t1, t4]
 
         # Problem 11
-        # TODO: After implementing read_trigger_config, uncomment this line 
-        # triggerlist = read_trigger_config('triggers.txt')
+        triggerlist = read_trigger_config('triggers.txt')
         
         # HELPER CODE - you don't need to understand this!
         # Draws the popup window that displays the filtered stories
