@@ -250,7 +250,7 @@ def main_thread(master):
         scrollbar = Scrollbar(master)
         scrollbar.pack(side=RIGHT,fill=Y)
 
-        t = "Google & Yahoo Top News"
+        t = "Google Top News"
         title = StringVar()
         title.set(t)
         ttl = Label(master, textvariable=title, font=("Helvetica", 18))
@@ -276,7 +276,7 @@ def main_thread(master):
             stories = process("http://news.google.com/news?output=rss")
 
             # Get stories from Yahoo's Top Stories RSS news feed
-            stories.extend(process("http://news.yahoo.com/rss/topstories"))
+            # stories.extend(process("http://news.yahoo.com/rss/topstories"))
 
             stories = filter_stories(stories, triggerlist)
 
